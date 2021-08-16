@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Glavna</title>
+</head>
+<body>
+<ul>
+    <li><a href="/">Pocetna strana</a></li>
+    <li><a href="/adminStrana">Admin strana</a></li>
+</ul>
+
+<form action="/pretrazi" method="post"> <label>Pretraga: </label> <input type="text" name="pretraga"> <button type="submit">Pretrazi</button></form>
+<br>
+<label>Sortiranje: </label> <select name="sortiraj">
+                                <option selected disabled hidden>Nacin sortiranja</option>
+                                <option id="cenaR">Cena rastuce</option>
+                                <option id="cenaO">Cena opadajuce</option>
+                                <option id="imeR">Ime rastuce</option>
+                                <option id="imeO">Ime opadajuce</option>
+                            </select>
+<hr>
+<div>
+    {{#if proizvodi}}
+        {{#each proizvodi}}
+            <div>
+                <p>Ime: {{this.ime}}</p>
+                <p>Cena: {{this.cena}}</p>
+                <p>Opis: {{this.opis}}</p>
+                <p>Id: {{this.id}}</p>
+                <p>Kategorija: {{this.kategorija.ime}}</p>
+            </div>
+        <hr>
+        {{/each}}
+    {{else}}
+        <h3>Nema unetih proizvoda</h3>
+    {{/if}}
+</div>
+
+</body>
+</html>

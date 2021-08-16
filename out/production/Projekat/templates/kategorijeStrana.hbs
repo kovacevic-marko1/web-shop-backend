@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kategorije</title>
+</head>
+<body>
+
+<ul>
+    <li><a href="/">Pocetna strana</a></li>
+    <li><a href="/adminStrana">Admin strana</a></li>
+    <li><a href="/dodajK">Dodaj kategoriju</a></li>
+</ul>
+{{#if msgOK}}
+    <div>{{msgOK}}</div>
+{{/if}}
+<div>
+    {{#if kategorije}}
+        {{#each kategorije}}
+            <div>
+                <p>Ime: {{this.ime}} <a href="/izmeniK/{{this.id}}">Izmeni</a> <a href="/obrisiK/{{this.id}}">Obrisi</a></p>
+                <p>Id: {{this.id}}</p>
+            </div>
+        {{/each}}
+    {{else}}
+        <h3>Nema unetih kategorija</h3>
+    {{/if}}
+</div>
+
+</body>
+</html>

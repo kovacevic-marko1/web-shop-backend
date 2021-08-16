@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dodavanje prozvoda</title>
+</head>
+<body>
+{{#if msgDP}}
+    <div>{{msgDP}}</div>
+{{/if}}
+
+    <h3>Unos novog proizvoda</h3>
+    <form action="/dodajProizvod" method="POST">
+        <div class="form-control">
+            <label>Ime</label>
+            <input type="text" name="ime">
+        </div>
+        <div class="form-control">
+            <label>Cena</label>
+            <input type="text" name="cena">
+        </div>
+        <div class="form-control">
+            <label>Opis</label>
+            <input type="text" name="opis">
+        </div>
+        <div class="form-control">
+            <label>Kategorija</label>
+            <select id="kategorija" name="kategorija">
+                {{#if kategorije}}
+                    {{#each kategorije}}
+                        <option value="{{this.ime}}">{{this.ime}}</option>
+                    {{/each}}
+                {{/if}}
+            </select>
+        </div>
+        <button type="submit">Dodaj proizvod</button>
+    </form>
+
+    <ul>
+        <li><a href="/">Pocetna strana</a></li>
+        <li><a href="/proizvodiStrana">Proizvodi strana</a></li>
+    </ul>
+
+</body>
+</html>

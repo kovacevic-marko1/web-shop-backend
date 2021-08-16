@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Proizvodi</title>
+</head>
+<body>
+    <ul>
+        <li><a href="/">Pocetna strana</a></li>
+        <li><a href="/adminStrana">Admin strana</a></li>
+        <li><a href="/dodajP">Dodaj proizvod</a></li>
+    </ul>
+
+    <div>
+        {{#if proizvodi}}
+            {{#each proizvodi}}
+                <div>
+                    <p>Ime: {{this.ime}} <a href="/izmeniP/{{this.id}}">Izmeni</a> <a href="/obrisiP/{{this.id}}">Obrisi</a></p>
+                    <p>Cena: {{this.cena}}</p>
+                    <p>Opis: {{this.opis}}</p>
+                    <p>Id: {{this.id}}</p>
+                    <p>Kategorija: {{this.kategorija.ime}}</p>
+                </div>
+            {{/each}}
+        {{else}}
+            <h3>Nema unetih proizvoda</h3>
+        {{/if}}
+    </div>
+
+</body>
+</html>

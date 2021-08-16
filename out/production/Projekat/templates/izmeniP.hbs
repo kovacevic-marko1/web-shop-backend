@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Izmena proizvoda</title>
+</head>
+<body>
+{{#if msgIP}}
+    <div>{{msgIP}}</div>
+{{/if}}
+<form action="/snimiIzmeneP" method="post">
+    <input name="id" type="text" value="{{proizvod.id}}" hidden>
+    <div class="form-control">
+        <label>Ime</label>
+        <input type="text" name="ime" value={{proizvod.ime}}>
+    </div>
+    <div class="form-control">
+        <label>Cena</label>
+        <input type="text" name="cena" value={{proizvod.cena}}>
+    </div>
+    <div class="form-control">
+        <label>Opis</label>
+        <input type="text" name="opis" value={{proizvod.opis}}>
+    </div>
+    <div class="form-control">
+        <label>Kategorija</label>
+        <select id="kategorija" name="kategorija">
+            {{#if kategorije}}
+                {{#each kategorije}}
+                    <option value="{{this.ime}}">{{this.ime}}</option>
+                {{/each}}
+            {{/if}}
+        </select>
+    </div>
+    <button type="submit">Izmeni proizvod</button>
+</form>
+
+<ul>
+    <li><a href="/proizvodiStrana">Proizvodi strana</a></li>
+</ul>
+
+</body>
+</html>

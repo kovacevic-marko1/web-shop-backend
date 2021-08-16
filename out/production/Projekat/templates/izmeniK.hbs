@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Izmena kategorije</title>
+</head>
+<body>
+<h3>Izmeni kategoriju</h3>
+{{#if msgIK}}
+    <div>{{msgIK}}</div>
+{{/if}}
+<form action="/snimiIzmeneK" method="POST">
+    <input name="id" type="text" value="{{kategorija.id}}" hidden>
+    <div class="form-control">
+        <label>Ime</label>
+        <input type="text" name="ime" value={{kategorija.ime}}>
+    </div>
+    <button type="submit">Izmeni kategoriju</button>
+</form>
+<ul>
+    <li><a href="/kategorijeStrana">Kategorije strana</a></li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Unos nove kategorije</title>
+</head>
+<body>
+<h3>Unos nove kategorije</h3>
+{{#if msgDK}}
+    <div>{{msgDK}}</div>
+{{/if}}
+<form action="/dodajKategoriju" method="POST">
+    <div class="form-control">
+        <label>Ime</label>
+        <input type="text" name="ime">
+    </div>
+    <button type="submit">Dodaj kategoriju</button>
+</form>
+
+<ul>
+    <li><a href="/">Pocetna strana</a></li>
+    <li><a href="/kategorijeStrana">Kategorije strana</a></li>
+</ul>
+</body>
+</html>
